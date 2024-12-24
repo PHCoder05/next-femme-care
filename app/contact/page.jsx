@@ -230,6 +230,23 @@ const Contact = () => {
             </div>
           </div>
         </div>
+  
+        {/* Map Section */}
+        <div className="mt-16">
+          <h2 className="text-3xl font-bold text-[#BF6159] text-center mb-6">
+            Find Us Here
+          </h2>
+          <div className="rounded-2xl overflow-hidden shadow-lg">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345087897!2d144.95373531531673!3d-37.81627944202148!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf0727b9cb2529f0!2s123%20Beauty%20Ave!5e0!3m2!1sen!2sus!4v1615162379874!5m2!1sen!2sus"
+              width="100%"
+              height="400"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
       </div>
     </section>
   );
