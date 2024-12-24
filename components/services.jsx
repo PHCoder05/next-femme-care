@@ -26,8 +26,7 @@ export default function Services() {
       title: 'Body Treatments',
       items: [
         'Feel confident in your body with expert care.',
-        // 'Cellulite treatments for natural skin tightening, scrubs, and spa leaving your skin hydrated and nourished.',
-        // 'Luxurious scrubs and wraps that leave your skin feeling soft and nourished.',
+       
       ],
     },
     {
