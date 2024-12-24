@@ -164,7 +164,7 @@ const ServiceInterface = () => {
           property="og:description" 
           content="Discover the best skin care and hair treatment services near Kokane Chowk, including HydraFacial, skin brightening, hair loss treatment, tattoo removal, and more."
         />
-        <meta property="og:image" content="/images/services-banner.jpg" />
+        <meta property="og:image" content="/images/home/about.jpg" />
         <meta property="og:url" content="https://www.hemkanti.com/services" />
         <link rel="canonical" href="https://www.hemkanti.com/services" />
       </Head>
