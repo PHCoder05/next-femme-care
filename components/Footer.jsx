@@ -30,7 +30,7 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="/products" className="hover:text-white transition duration-300">
+              <a href="/product" className="hover:text-white transition duration-300">
                 Products
               </a>
             </li>
