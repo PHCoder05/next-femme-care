@@ -238,7 +238,7 @@ const Contact = () => {
           </h2>
           <div className="rounded-2xl overflow-hidden shadow-lg">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345087897!2d144.95373531531673!3d-37.81627944202148!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf0727b9cb2529f0!2s123%20Beauty%20Ave!5e0!3m2!1sen!2sus!4v1615162379874!5m2!1sen!2sus"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d181298.44944431618!2d73.66293298569158!3d18.604728137703074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b9967c1b93d3%3A0x5a6a5037b58b2699!2sHemkanti%20Clinic!5e0!3m2!1sen!2sin!4v1735117909172!5m2!1sen!2sin"
               width="100%"
               height="400"
               style={{ border: 0 }}
