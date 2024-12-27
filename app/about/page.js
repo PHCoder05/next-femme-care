@@ -89,7 +89,7 @@ const AboutUs = () => {
               ))}
             </div>
             <p className="text-gray-700 text-lg leading-relaxed mb-6">
-            The founder of our brand, DR.AKANKSHA has dedicated her entire career to the cosmetology and healthcare sector.
+            The founder of our brand, Dr.AKANKSHA has dedicated her entire career to the cosmetology and healthcare sector.
 After extensive work experiences in healthcare Sector, Dr.Akanksha established HEMKANTI Brand with a sanskrit meaning Shining like a goldin the heart of Pune to provide Skin, Hair, Aesthetic Gynaecology along with HOMOEOPATHIC treatments.
 HEMKANTI Clinics has patients from various cities who have embarked to have their desired treatments from our top skin specialist’s team.
 
