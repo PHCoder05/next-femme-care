@@ -4,9 +4,9 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Column 1: Brand Info */}
         <div>
-          <h3 className="text-white text-2xl font-bold mb-4">Hemkanti Clinics</h3>
+          <img src="/images\white-bg-hemkanti_mw-removebg-preview.png" className="text-white text-2xl font-bold mb-4"/>
           <p className="text-sm">
-            Heal and Glow with our skincare clinic services
+            Heal and Glow with our skincare clinics services
           </p>
         </div>
 
@@ -36,7 +36,7 @@ export default function Footer() {
             </li>
             <li>
               <a href="https://www.blogs.hemkanti.com" className="hover:text-white transition duration-300">
-                Blog
+              Blogs
               </a>
             </li>
             <li>
@@ -73,7 +73,7 @@ export default function Footer() {
         <div>
           <h4 className="text-white font-semibold mb-4">Contact Us</h4>
           <ul className="space-y-2 text-sm">
-            <li>📍 Pune, Maharashtra</li>
+            <li>📍Hemkanti Clinics Off No:207, Commerce Centre,Shivar Garden Road, Pimple Saudagar, Pune, (MH),India -411017</li>
             <li>📞 +91 9405631363</li>
             <li>✉️ info@hemkanti.com</li>
             <li>⏰ Mon - Sat: 11:00 AM - 8:00 PM</li>
@@ -101,12 +101,12 @@ export default function Footer() {
         >
           <i className="fab fa-instagram text-white"></i>
         </a>
-        <a
+        {/* <a
           href="#"
           className="w-10 h-10 flex justify-center items-center bg-gray-700 rounded-full hover:bg-gray-300 transition"
         >
           <i className="fab fa-linkedin-in text-white"></i>
-        </a>
+        </a> */}
       </div>
 
       {/* Bottom Section */}

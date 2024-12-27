@@ -6,7 +6,7 @@ export default function FaqTestimonials() {
     {
       question: "How do I book an appointment?",
       answer:
-        "You can book an appointment by calling our clinic, sending us an email, or using our online booking system on the website. We recommend booking in advance, especially for popular treatments.",
+        "You can book an appointment by calling our clinics, sending us an email, or using our online booking system on the website. We recommend booking in advance, especially for popular treatments.",
     },
     {
       question: "Are your treatments safe?",
@@ -35,7 +35,7 @@ export default function FaqTestimonials() {
     },
     {
       id: 3,
-      text: "The entire experience at Hemkanti was amazing. The clinic is professional, and the staff is knowledgeable, friendly, and so caring. My facial left me feeling rejuvenated and glowing!",
+      text: "The entire experience at Hemkanti was amazing. The clinics is professional, and the staff is knowledgeable, friendly, and so caring. My facial left me feeling rejuvenated and glowing!",
       name: "Priya",
       location: "Pune",
     },

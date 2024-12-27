@@ -6,7 +6,7 @@ const faqs = [
   {
     question: "How do I book an appointment?",
     answer:
-      "You can book an appointment by calling our clinic, sending us an email, or using our online booking system on the website. We recommend booking in advance, especially for popular treatments.",
+      "You can book an appointment by calling our clinics, sending us an email, or using our online booking system on the website. We recommend booking in advance, especially for popular treatments.",
   },
   {
     question: "Are your treatments safe?",

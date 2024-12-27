@@ -5,7 +5,7 @@ export default function WhyChooseHemkanti() {
     {
       title: 'Experienced Experts',
       description:
-        'Our clinic is led by skilled professionals, dedicated to providing expert advice and proven solutions for your skin and hair care.',
+        'Our clinics is led by skilled professionals, dedicated to providing expert advice and proven solutions for your skin and hair care.',
       icon: 'fa-user-md',
     },
     {
@@ -17,13 +17,13 @@ export default function WhyChooseHemkanti() {
     {
       title: 'Latest Technology',
       description:
-        'Stay ahead in skin care with cutting-edge treatments powered by the latest technology and US FDA APPROVED MACHINES at our clinic for safe and effective results.',
+        'Stay ahead in skin care with cutting-edge treatments powered by the latest technology and US FDA APPROVED MACHINES at our clinics for safe and effective results.',
       icon: 'fa-microchip',
     },
     {
       title: 'Trusted, High-Quality Products',
       description:
-        'Experience premium care with top-quality products at our clinic, designed to provide lasting results and maintain your skin’s health.',
+        'Experience premium care with top-quality products at our clinics, designed to provide lasting results and maintain your skin’s health.',
       icon: 'fa-leaf',
     },
     {
@@ -35,7 +35,7 @@ export default function WhyChooseHemkanti() {
     {
       title: 'Comprehensive Follow-Up',
       description:
-        'Achieve and maintain glowing skin with our clinic’s detailed follow-up care, customized to meet your unique needs and goals.',
+        'Achieve and maintain glowing skin with our clinics’s detailed follow-up care, customized to meet your unique needs and goals.',
       icon: 'fa-calendar-check',
     },
   ];

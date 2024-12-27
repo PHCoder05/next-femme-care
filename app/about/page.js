@@ -9,13 +9,13 @@ const AboutUs = () => {
     "MD in Homoeopathy",
     "Post Graduate Diploma in Clinical Cosmetology",
     "Post Graduate Diploma in Trichology",
-    "Post Graduate Diploma in Aesthetic Gynecology"
+    "Post Graduate Diploma in Aesthetic Gaynacalogy"
   ];
 
   const achievements = [
-    { value: "100+", label: "Happy Clients" },
+    { value: "50+", label: "Happy Clients" },
     { value: "10+", label: "Years Experience" },
-    { value: "50+", label: "Treatments" }
+    { value: "150+", label: "Treatments" }
   ];
 
   return (
@@ -30,7 +30,7 @@ const AboutUs = () => {
         />
         <meta 
           name="keywords" 
-          content="Dr.Akansha Kharote, Akansha Kharote, Dr.Kharote, Skin care specialist"/>
+          content="Dr.Akanksha Kharote, Akanksha Kharote, Dr.Kharote, Skin care specialist"/>
         <meta property="og:title" content="Best Skin Care & Hair Treatment Services Near Kokane Chowk" />
         <meta 
           property="og:description" 
@@ -59,7 +59,7 @@ const AboutUs = () => {
               <div className="relative w-72 h-72 rounded-2xl overflow-hidden">
                 <Image
                   src="/images/about/image.png"
-                  alt="Dr. Akansha Kharote"
+                  alt="Dr. Akanksha Kharote"
                   priority
                   width={288}
                   height={288}
@@ -76,7 +76,7 @@ const AboutUs = () => {
           </div>
 
           <div className="lg:w-2/3">
-            <h3 className="text-4xl font-semibold text-[#BF6159] mb-4">Dr. Akansha Kharote</h3>
+            <h3 className="text-4xl font-semibold text-[#BF6159] mb-4">Dr. Akanksha Kharote</h3>
             <div className="space-y-3 mb-6">
               {qualifications.map((qualification, index) => (
                 <div 
@@ -89,8 +89,8 @@ const AboutUs = () => {
               ))}
             </div>
             <p className="text-gray-700 text-lg leading-relaxed mb-6">
-            The founder of our brand, DR.AKANKSHA has dedicated her entire career to the cosmetology and healthcare industry.
-After extensive work experiences in healthcare Industry, Dr.Akanksha established HEMKANTI Brand with a sanskrit meaning Shining like gold in the heart of Pune to provide Skin, Hair, Aesthetic Gynaecology along with HOMOEOPATHIC treatments.
+            The founder of our brand, DR.AKANKSHA has dedicated her entire career to the cosmetology and healthcare sector.
+After extensive work experiences in healthcare Sector, Dr.Akanksha established HEMKANTI Brand with a sanskrit meaning Shining like a goldin the heart of Pune to provide Skin, Hair, Aesthetic Gynaecology along with HOMOEOPATHIC treatments.
 HEMKANTI Clinics has patients from various cities who have embarked to have their desired treatments from our top skin specialist’s team.
 
             </p>

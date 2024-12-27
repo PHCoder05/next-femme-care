@@ -20,7 +20,7 @@
           "id": "cos-2",
           "name": "Chemical Peels",
           "icon": "🍊",
-          "description": "Renew your skin with a chemical peel.",
+          "description": "Renew and refresh your skin with a rejuvenating chemical peel.",
           "longDescription": "Our chemical peel treatments help to reduce acne scars, fine lines, and pigmentation, revealing a fresher, smoother complexion.",
           "rating": 4.7,
           "price": 129,
@@ -117,22 +117,10 @@
 ,
 
 
-    "Aesthetic Gynecology": {
+    "Aesthetic Gaynacalogy": {
       "icon": "💁‍♀️",
       "description": "Specialized treatments for women's intimate health and beauty.",
       "services": [
-        {
-          "id": "gyneco-1",
-          "name": "Increase Libido",
-          "icon": "❤️",
-          "description": "Enhance sexual desire and overall well-being.",
-          "longDescription": "Our libido enhancement treatments help to improve sexual desire, energy, and overall confidence.",
-          "rating": 4.8,
-          "price": 299,
-          "duration": "60 min",
-          "benefits": ["Increased libido", "Enhanced confidence", "Better intimacy"],
-          "availableSlots": ["Morning", "Afternoon", "Evening"]
-        },
         {
           "id": "gyneco-2",
           "name": "Vaginal Rejuvenation",
@@ -145,18 +133,7 @@
           "benefits": ["Tightening", "Improved sensation", "Increased confidence"],
           "availableSlots": ["Morning", "Afternoon"]
         },
-        {
-          "id": "gyneco-3",
-          "name": "Vaginism",
-          "icon": "🛑",
-          "description": "Treat and alleviate vaginism for a more comfortable experience.",
-          "longDescription": "Our treatment for vaginism helps address muscle spasms and discomfort, improving intimacy and quality of life.",
-          "rating": 4.7,
-          "price": 259,
-          "duration": "60 min",
-          "benefits": ["Reduced discomfort", "Increased comfort during intimacy", "Improved quality of life"],
-          "availableSlots": ["Morning", "Afternoon"]
-        },
+
         {
           "id": "gyneco-4",
           "name": "Mommy Makeover",

@@ -10,11 +10,11 @@ export default function About() {
   <div className="relative w-full h-80 md:h-96 rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-500 ease-in-out">
     <Image
       src="/images/home/about.jpg"
-      alt="Hemkanti Clinic"
+      alt="Hemkanti Clinics"
       fill
       style={{ objectFit: 'cover' }} loading="eager"
       className="rounded-xl"
-      title="Hemkanti Clinic"
+      title="Hemkanti Clinics"
     />
   </div>
 </div>
@@ -33,7 +33,7 @@ export default function About() {
                   Our Ambition
                 </h2>
                 <p className="text-lg leading-relaxed text-gray-700">
-                  At Hemkanti Clinic, we aim to bring our treatments, products, and expertise to a wider audience. We are committed to continuously researching and developing new lines of skincare treatments and products to meet the evolving needs of our clients.
+                  At Hemkanti Clinics, we aim to bring our treatments, products, and expertise to a wider audience. We are committed to continuously researching and developing new lines of skincare treatments and products to meet the evolving needs of our clients.
                 </p>
               </div>
 
@@ -43,7 +43,7 @@ export default function About() {
                   Our Mission
                 </h2>
                 <p className="text-lg leading-relaxed text-gray-700">
-                  Our mission is to empower our clients to embrace their natural beauty and live their best lives. We are dedicated to personalized care, ensuring each patient receives the best treatment for their needs. At Hemkanti Clinic, we treat each patient like family, prioritizing their well-being and feedback in every step of the process.
+                  Our mission is to empower our clients to embrace their natural beauty and live their best lives. We are dedicated to personalized care, ensuring each patient receives the best treatment for their needs. At Hemkanti Clinics, we treat each patient like family, prioritizing their well-being and feedback in every step of the process.
                 </p>
               </div>
             </div>

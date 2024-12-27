@@ -73,10 +73,10 @@ const FloatingButtonWithModal = () => {
           "ctaText": "Chat with us",
           "borderRadius": "25",
           "marginLeft": "20",
-          "marginRight": "20",
-          "marginBottom": "20",
+          "marginRight": "32",
+          "marginBottom": "100",
           "ctaIconWATI": false,
-          "position": "left"
+          "position": "right"
         },
         "brandSetting": {
           "brandName": "Hemkanti",
@@ -88,7 +88,7 @@ const FloatingButtonWithModal = () => {
           "ctaText": "Chat with us",
           "borderRadius": "25",
           "autoShow": false,
-          "phoneNumber": "+919405631363"
+          "phoneNumber": "+919511604677"
         }
       };
       // Initialize the widget after the script is loaded

@@ -41,7 +41,7 @@ const Navbar = () => {
     { name: "ABOUT", href: "/about" },
     { name: "SERVICES", href: "/services" },
     { name: "PRODUCTS", href: "/product" },
-    { name: "BLOG", href: "https://www.blogs.hemkanti.com" },
+    { name: "BLOGS", href: "https://www.blogs.hemkanti.com" },
     { name: "CONTACT", href: "/contact" },
   ];
 

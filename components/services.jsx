@@ -4,7 +4,7 @@ import Link from 'next/link';
 export default function Services() {
   const services = [
     {
-      image: '/images/home/services/facial.jpg',
+      image: '/images/home/services/woman-beauty-salon-face-treatment.jpg',
       title: 'Facial Treatments',
       items: [
         'Feel and live young.',
@@ -14,7 +14,7 @@ export default function Services() {
     },
     {
       image: '/images/home/services/laser2.jpg',
-      title: 'Laser & Light Therapy',
+      title: 'Laser Therapy',
     items: [
       'Skin Brightening with advanced laser treatments.',
       'Treat hyperpigmentation and melasma for an even skin tone.',

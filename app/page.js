@@ -17,7 +17,7 @@ function Home() {
       description: "Discover tailored prices and skincare treatments near you for a radiant look.",
     },
     {
-      image: "/images/home/photo2.png",
+      image: "/images/home/photo2lady2.jpg",
       title: "Feel Young and Refreshed",
       description: "Explore aesthetic treatments and expert tips to rejuvenate your skin.",
     },
@@ -149,7 +149,7 @@ function Home() {
         {/* Section Separators */}
         <div className="w-full bg-[#F9F2F0] py-8">
           <h2 className="text-center text-3xl font-bold text-[#6D4C41] tracking-wider">
-            Welcome to Hemkanti Clinic
+            Welcome to Hemkanti Clinics
           </h2>
           <p className="text-center text-lg text-gray-600 mt-2">
             Your trusted skincare and wellness destination.
