@@ -6,7 +6,7 @@ import Head from 'next/head';
 
 const AboutUs = () => {
   const qualifications = [
-    "MD in Homoeopathy",
+    "MD in Homeopathy",
     "Post Graduate Diploma in Clinical Cosmetology",
     "Post Graduate Diploma in Trichology",
     "Post Graduate Diploma in Aesthetic Gaynacalogy"
@@ -90,7 +90,7 @@ const AboutUs = () => {
             </div>
             <p className="text-gray-700 text-lg leading-relaxed mb-6">
             The founder of our brand, Dr.AKANKSHA has dedicated her entire career to the cosmetology and healthcare sector.
-After extensive work experiences in healthcare Sector, Dr.Akanksha established HEMKANTI Brand with a sanskrit meaning Shining like a goldin the heart of Pune to provide Skin, Hair, Aesthetic Gynaecology along with HOMOEOPATHIC treatments.
+After extensive work experiences in healthcare Sector, Dr.Akanksha established HEMKANTI Brand with a sanskrit meaning Shining like a goldin the heart of Pune to provide Skin, Hair, Aesthetic Gynaecology along with HOMEOPATHIC treatments.
 HEMKANTI Clinics has patients from various cities who have embarked to have their desired treatments from our top skin specialist’s team.
 
             </p>
