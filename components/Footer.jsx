@@ -4,7 +4,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Column 1: Brand Info */}
         <div>
-          <img src="/images\white-bg-hemkanti_mw-removebg-preview.png" className="text-white text-2xl font-bold mb-4"/>
+          <img src="/images/hemkanti1-footer.png" className="text-white text-2xl font-bold mb-4"/>
           <p className="text-sm">
             Heal and Glow with our skincare clinics services
           </p>
