@@ -61,7 +61,7 @@ const Navbar = () => {
       {/* Logo Section */}
       <Link href="/" className="relative z-50">
         <Image
-          src="/images/white-bg-hemkanti_mw-removebg-preview.png"
+          src="/images/hemkanti1-header.png"
           alt="HEMKANTI Logo"
           width={150}
           height={38}
