@@ -24,91 +24,103 @@ export default function BookAppointment({ formData, handleInputChange, closeModa
     setCategories(Object.entries(servicesData.categories || {}));
   }, [formData]);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    // Find the name of the category or service based on the selected ID
-    const categoryName = categories.find(([name, _]) => name === localFormData.category)?.[0];
-    const serviceName = localFormData.service ? servicesData.categories[categoryName]?.services.find((service) => service.id === localFormData.service)?.name : null;
+  // Reset message before validation
+  setMessage('');
 
-    // Validate form inputs
-    if (!validatePhone(localFormData.phone)) {
-      setMessage({ text: 'Please enter a valid phone number.', type: 'error' });
+  // Find the name of the category or service based on the selected ID
+  const categoryName = categories.find(([name, _]) => name === localFormData.category)?.[0];
+  const serviceName = localFormData.service
+    ? servicesData.categories[categoryName]?.services.find((service) => service.id === localFormData.service)?.name
+    : null;
+
+  // Validate form inputs
+  if (!validatePhone(localFormData.phone)) {
+    setMessage({ text: 'Please enter a valid phone number.', type: 'error' });
+    return;
+  }
+
+  if (!validateEmail(localFormData.email)) {
+    setMessage({ text: 'Please enter a valid email address.', type: 'error' });
+    return;
+  }
+
+  if (new Date(localFormData.date) < new Date()) {
+    setMessage({ text: 'Please select a future date.', type: 'error' });
+    return;
+  }
+
+  if (!localFormData.time) {
+    setMessage({ text: 'Please select a time.', type: 'error' });
+    return;
+  }
+
+  if (!localFormData.category) {
+    setMessage({ text: 'Please select a category.', type: 'error' });
+    return;
+  }
+
+  const selectedCategory = categories.find(([name]) => name === localFormData.category);
+  if (selectedCategory && selectedCategory[1]?.services?.length > 0 && !localFormData.service) {
+    setMessage({
+      text: 'Please select a service listed below for the chosen category.',
+      type: 'error',
+    });
+    return;
+  }
+
+  // Ensure all required fields are filled out
+  const requiredFields = ['name', 'email', 'phone', 'date', 'time', 'category'];
+  for (const field of requiredFields) {
+    if (!localFormData[field]) {
+      setMessage({ text: `Please fill out the ${field}.`, type: 'error' });
       return;
     }
+  }
 
-    if (!validateEmail(localFormData.email)) {
-      setMessage({ text: 'Please enter a valid email address.', type: 'error' });
-      return;
+  setLoading(true);
+
+  try {
+    // Replace category ID with category name and service ID with service name
+    const appointmentData = {
+      ...localFormData,
+      category: categoryName, // Use the category name
+      service: serviceName, // Use the service name if available
+    };
+
+    const response = await fetch('/api/book_appointment', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(appointmentData),
+    });
+
+    if (!response.ok) {
+      const errorResponse = await response.json();
+      console.error('Error Response:', errorResponse);
+      throw new Error(`Server error: ${response.status} ${response.statusText}`);
     }
 
-    if (new Date(localFormData.date) < new Date()) {
-      setMessage({ text: 'Please select a future date.', type: 'error' });
-      return;
+    const result = await response.json();
+
+    if (result.success) {
+      setMessage({ text: 'Your appointment has been booked successfully!', type: 'success' });
+      setTimeout(() => {
+        closeModal();
+        localStorage.removeItem('appointmentFormData');
+      }, 5000);
+    } else {
+      setMessage({ text: result.message || 'There was an error. Please try again.', type: 'error' });
     }
+  } catch (error) {
+    console.error('Error:', error);
+    setMessage({ text: `Something went wrong: ${error.message || 'Please try again.'}`, type: 'error' });
+  } finally {
+    setLoading(false);
+  }
+};
 
-    if (!localFormData.time) {
-      setMessage({ text: 'Please select a time.', type: 'error' });
-      return;
-    }
-
-    // Ensure category is selected
-    if (!localFormData.category) {
-      setMessage({ text: 'Please select a category.', type: 'error' });
-      return;
-    }
-
-    // Ensure all required fields are filled out
-    const requiredFields = ['name', 'email', 'phone', 'date', 'time', 'category'];
-    for (const field of requiredFields) {
-      if (!localFormData[field]) {
-        setMessage({ text: `Please fill out the ${field}.`, type: 'error' });
-        return;
-      }
-    }
-
-    setLoading(true);
-
-    try {
-      console.log(localFormData); // Check data structure
-
-      // Replace category ID with category name and service ID with service name
-      const appointmentData = {
-        ...localFormData,
-        category: categoryName, // Use the category name
-        service: serviceName, // Use the service name if available
-      };
-
-      const response = await fetch('/api/book_appointment', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(appointmentData),
-      });
-
-      if (!response.ok) {
-        const errorResponse = await response.json();
-        console.error('Error Response:', errorResponse);
-        throw new Error(`Server error: ${response.status} ${response.statusText}`);
-      }
-
-      const result = await response.json();
-
-      if (result.success) {
-        setMessage({ text: 'Your appointment has been booked successfully!', type: 'success' });
-        setTimeout(() => {
-          closeModal();
-          localStorage.removeItem('appointmentFormData');
-        }, 5000);
-      } else {
-        setMessage({ text: result.message || 'There was an error. Please try again.', type: 'error' });
-      }
-    } catch (error) {
-      console.error('Error:', error);
-      setMessage({ text: `Something went wrong: ${error.message || 'Please try again.'}`, type: 'error' });
-    } finally {
-      setLoading(false);
-    }
-  };
 
   const validatePhone = (phone) => /^[0-9]{10}$/.test(phone);
 
