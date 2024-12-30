@@ -8,8 +8,8 @@ import FloatingButton from "../components/FloatingButton";
 // Metadata API for managing head tags
 export const metadata = {
   title: "Hemkanti - Skincare Clinics",
-  description: "Heal and Glow with our skincare clinics services. Offering personalized skincare solutions for a radiant glow.",
-  keywords: "skincare, clinics, beauty, skin treatments, skincare services, health, beauty clinics, glowing skin",
+  description: "Visit Hemkanti Skin Care Clinic near Shivar Garden for HydraFacial, hair treatments, tattoo removal, skin brightening, laser hair reduction & more by Dr. Akanksha Kharote.",
+  keywords: "hair coloring services near me, hair treatment clinic near me, skin clinic near me, HydraFacial near shivar garden, hair loss treatment near shivar garden, skin brightening services near me, tattoo removal near me, laser hair reduction near shivar garden, birth mark removal near me, melasma treatment near me, laser hair removal near shivar garden, skin discoloration near me, Korean glass skin in Pune, vampire facial in Pune, hair rebonding near me, skin care centre near me, Hemkanti, Hemkanti skincare clinics, Laser Therapy near shivar garden, Hair removal near shivar garden, Skin clinic near shivar garden,Dr.Akanksha Kharote, Akanksha Kharote, Dr.Kharote, Skin care specialist, Tattoo removal near shivar garden, Best Skin Specialist near shivar garden, skin care clinic near shivar garden,",
   author: "Hemkanti Clinics",
   robots: "index, follow", // Ensures search engines index the site and follow the links.
   openGraph: {
