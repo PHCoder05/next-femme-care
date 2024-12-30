@@ -73,10 +73,11 @@ export default function Footer() {
         <div>
           <h4 className="text-white font-semibold mb-4">Contact Us</h4>
           <ul className="space-y-2 text-sm">
-            <li>📍Hemkanti Clinics Off No:207, Commerce Centre,Shivar Garden Road, Pimple Saudagar, Pune, (MH),India -411017</li>
+            <li>📍Hemkanti Clinics</li>
+              <li> Off No:207, Commerce Centre,Shivar Garden Road, Pimple Saudagar, Pune, (MH),India -411017</li>
             <li>📞 +91 9405631363</li>
             <li>✉️ info@hemkanti.com</li>
-            <li>⏰ Mon - Sat: 11:00 AM - 8:00 PM</li>
+            <li>⏰ Tue - Sun: 11:00 AM - 8:00 PM</li>
           </ul>
         </div>
       </div>

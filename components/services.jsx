@@ -17,7 +17,7 @@ export default function Services() {
       title: 'Laser Therapy',
     items: [
       'Skin Brightening with advanced laser treatments.',
-      'Treat hyperpigmentation and melasma for an even skin tone.',
+      'Treat hyperpigmentation and melasma for a even skin tone.',
       'Remove unwanted tattoos and birthmarks using our advanced laser technology.',
       ],
     },
@@ -26,14 +26,16 @@ export default function Services() {
       title: 'Body Treatments',
       items: [
         'Feel confident in your body with expert care.',
+        'Non-invasive cosmetic procedure that targets the face, neck, and abdomen.',
        
       ],
     },
     {
       image: '/images/home/services/iStock-1353459858.jpg',
-      title: 'Hair Removal',
+      title: 'Hair Reduction',
       items: [
-        'Eliminate unwanted hair with our cutting-edge laser hair removal services.',
+        'Eliminate unwanted hair with our cutting-edge laser hair reduction services.',
+        'A hygiene compliant beauty clinic.',
       ],
     },
   ];

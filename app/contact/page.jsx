@@ -190,13 +190,13 @@ const Contact = () => {
           </h2>
           <div className="flex flex-col lg:flex-row justify-between items-center text-gray-700 space-y-4 lg:space-y-0">
             <p>
-              <span className="font-bold">Monday - Friday:</span> 11:00 AM - 8:00 PM
+              <span className="font-bold">Tuesday - Saturday</span> 11:00 AM - 8:00 PM
             </p>
             <p>
-              <span className="font-bold">Saturday:</span> 11:00 AM - 8:00 PM
+              <span className="font-bold">Sunday:</span> 11:00 AM - 6:00 PM
             </p>
             <p>
-              <span className="font-bold">Sunday:</span>11:00 AM - 8:00 PM
+              <span className="font-bold">Monday:</span> Closed
             </p>
           </div>
         </div>
