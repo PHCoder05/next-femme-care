@@ -59,16 +59,15 @@ function Home() {
         />
         <meta 
           name="keywords" 
-          content="Hemkanti, Laser & Light Therapy, Hair removal"
-        />
+          content="Hemkanti, Hemkanti skincare clinics, Laser Therapy near shivar garden, Hair removal near shivar garden, Skin clinic near shivar garden"/>
         <meta property="og:title" content="Best Skin Care & Hair Treatment Services Near Kokane Chowk" />
         <meta 
           property="og:description" 
           content="Discover the best skin care and hair treatment services near Kokane Chowk, including HydraFacial, skin brightening, hair loss treatment, tattoo removal, and more."
         />
         <meta property="og:image" content="/images/services-banner.jpg" />
-        <meta property="og:url" content="https://www.hemkanti.in/home" />
-        <link rel="canonical" href="https://www.hemkanti.in/home" />
+        <meta property="og:url" content="https://www.hemkanti.com/home" />
+        <link rel="canonical" href="https://www.hemkanti.com/home" />
       </Head>
 
       <div className="overflow-hidden">

@@ -155,10 +155,8 @@ const ServiceInterface = () => {
         />
         <meta 
           name="keywords" 
-          content="
-            best skin care products in Pimple Saudagar, skin care centre near Kokane Chowk, hair coloring services, hair treatment centre near Kokane Chowk Pune, skin clinics, HydraFacial, hair loss treatment, skin brightening services, skin specialist, tattoo removal, laser hair reduction, birth mark removal, melasma treatment, laser hair removal, skin discoloration, Korean glass skin, vampire facial, best hair rebonding, skin care centre near me, hair loss issues
-          "
-        />
+          content="hair coloring services near me, hair treatment clinic near me, skin clinic near me, HydraFacial near shivar garden, hair loss treatment near shivar garden, 
+          skin brightening services near me, tattoo removal near me, laser hair reduction near shivar garden, birth mark removal near me, melasma treatment near me, laser hair removal near shivar garden, skin discoloration near me, Korean glass skin in Pune, vampire facial in Pune, hair rebonding near me, skin care centre near me"/>
         <meta property="og:title" content="Best Skin Care & Hair Treatment Services Near Kokane Chowk" />
         <meta 
           property="og:description" 

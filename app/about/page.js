@@ -30,15 +30,15 @@ const AboutUs = () => {
         />
         <meta 
           name="keywords" 
-          content="Dr.Akanksha Kharote, Akanksha Kharote, Dr.Kharote, Skin care specialist"/>
+          content="Dr.Akanksha Kharote, Akanksha Kharote, Dr.Kharote, Skin care specialist, Tattoo removal near shivar garden, Best Skin Specialist near shivar garden, skin care clinic near shivar garden"/>
         <meta property="og:title" content="Best Skin Care & Hair Treatment Services Near Kokane Chowk" />
         <meta 
           property="og:description" 
           content="Discover the best skin care and hair treatment services near Kokane Chowk, including HydraFacial, skin brightening, hair loss treatment, tattoo removal, and more."
         />
         <meta property="og:image" content="/images/home/services/facial.jpg" />
-        <meta property="og:url" content="https://www.hemkanti.in/about-us" />
-        <link rel="canonical" href="https://www.hemkanti.in/about-us" />
+        <meta property="og:url" content="https://www.hemkanti.com/about-us" />
+        <link rel="canonical" href="https://www.hemkanti.com/about-us" />
       </Head>
     
     <section className="bg-gradient-to-r from-[#FFF5F3] via-[#FEE9E5] to-[#FFF5F3] py-20 px-6 relative overflow-hidden">
