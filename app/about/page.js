@@ -20,9 +20,18 @@ const AboutUs = () => {
 
   return (
 
-// SEO for About Us
+    // Google Tag & SEO for About Us
     <>
     <Head>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJMTDGDNCL"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-QJMTDGDNCL');
+        </script>
+        
         <title> About Us|Hemkanti</title>
         <meta 
           name="description" 

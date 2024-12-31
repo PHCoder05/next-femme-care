@@ -145,9 +145,17 @@ const ServiceInterface = () => {
     ));
 
   return (
-    //SEO for Services
+    //Google tag & SEO for Services
     <>
     <Head>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJMTDGDNCL"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QJMTDGDNCL');
+        </script>
         <title>Services|Hemkanti</title>
         <meta 
           name="description" 

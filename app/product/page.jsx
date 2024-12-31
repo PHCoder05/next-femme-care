@@ -49,9 +49,18 @@ const Products = () => {
   ];
 
   return (
-    // SEO for Products
+    // Google Tag & SEO for Products
     <>
     <Head>
+
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJMTDGDNCL"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QJMTDGDNCL');
+        </script>
         <title> Products| Hemkanti</title>
         <meta 
           name="description" 
