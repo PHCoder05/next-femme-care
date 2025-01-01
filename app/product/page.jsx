@@ -52,8 +52,6 @@ const Products = () => {
     // Google Tag & SEO for Products
     <>
     <Head>
-
-        <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJMTDGDNCL"></script>
         <script>
         window.dataLayer = window.dataLayer || [];
