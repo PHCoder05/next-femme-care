@@ -147,33 +147,40 @@ const ServiceInterface = () => {
   return (
     //Google tag & SEO for Services
     <>
-    <Head>
-       
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJMTDGDNCL"></script>
-        <script>
+<Head>
+  {/* Google Analytics */}
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJMTDGDNCL"></script>
+  <script
+    dangerouslySetInnerHTML={{
+      __html: `
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-QJMTDGDNCL');
-        </script>
-        <title>Services|Hemkanti</title>
-        <meta 
-          name="description" 
-          content="Discover the best skin care and hair treatment services near Kokane Chowk, including HydraFacial, skin brightening, hair loss treatment, tattoo removal, and more." 
-        />
-        <meta 
-          name="keywords" 
-          content="hair coloring services near me, hair treatment clinic near me, skin clinic near me, HydraFacial near shivar garden, hair loss treatment near shivar garden, 
-          skin brightening services near me, tattoo removal near me, laser hair reduction near shivar garden, birth mark removal near me, melasma treatment near me, laser hair removal near shivar garden, skin discoloration near me, Korean glass skin in Pune, vampire facial in Pune, hair rebonding near me, skin care centre near me"/>
-        <meta property="og:title" content="Best Skin Care & Hair Treatment Services Near Kokane Chowk" />
-        <meta 
-          property="og:description" 
-          content="Discover the best skin care and hair treatment services near Kokane Chowk, including HydraFacial, skin brightening, hair loss treatment, tattoo removal, and more."
-        />
-        <meta property="og:image" content="/images/home/about.jpg" />
-        <meta property="og:url" content="https://www.hemkanti.com/services" />
-        <link rel="canonical" href="https://www.hemkanti.com/services" />
-      </Head>
+      `,
+    }}
+  />
+  {/* Meta Information */}
+  <title>Services | Hemkanti</title>
+  <meta
+    name="description"
+    content="Discover the best skin care and hair treatment services near Kokane Chowk, including HydraFacial, skin brightening, hair loss treatment, tattoo removal, and more."
+  />
+  <meta
+    name="keywords"
+    content="hair coloring services near me, hair treatment clinic near me, skin clinic near me, HydraFacial near shivar garden, hair loss treatment near shivar garden, 
+    skin brightening services near me, tattoo removal near me, laser hair reduction near shivar garden, birth mark removal near me, melasma treatment near me, laser hair removal near shivar garden, skin discoloration near me, Korean glass skin in Pune, vampire facial in Pune, hair rebonding near me, skin care centre near me"
+  />
+  <meta property="og:title" content="Best Skin Care & Hair Treatment Services Near Kokane Chowk" />
+  <meta
+    property="og:description"
+    content="Discover the best skin care and hair treatment services near Kokane Chowk, including HydraFacial, skin brightening, hair loss treatment, tattoo removal, and more."
+  />
+  <meta property="og:image" content="/images/home/about.jpg" />
+  <meta property="og:url" content="https://www.hemkanti.com/services" />
+  <link rel="canonical" href="https://www.hemkanti.com/services" />
+</Head>
+
     
     
     
