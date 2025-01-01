@@ -35,7 +35,7 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="https://www.blogs.hemkanti.com" className="hover:text-white transition duration-300">
+              <a href="https://blogs.hemkanti.com" className="hover:text-white transition duration-300">
               Blogs
               </a>
             </li>
