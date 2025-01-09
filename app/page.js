@@ -7,6 +7,8 @@ import Services from "../components/services";
 import FaqTestimonials from "../components/testimonials";
 import FloatingButtonWithModal from "../components/FloatingButton";
 import NewArrivals from "../components/blog";
+import ScreenCarePopup from "../components/popup";
+
 import Head from 'next/head';
 
 function Home() {
@@ -177,6 +179,8 @@ function Home() {
           </div>
         </div>
       </div>
+                <ScreenCarePopup/>
+
     </>
   );
 }
