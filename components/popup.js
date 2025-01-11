@@ -78,7 +78,7 @@ const ScreenCarePopup = () => {
             {/* Action Buttons */}
             <div className="flex flex-col  gap-4">
               <button
-                onClick={() => (window.location.href = "tel:+919511604677")}
+                onClick={() => (window.location.href = "tel:+919405631363")}
                 className="flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
                 <PhoneCall className="h-4 w-4" />
                 Call Now
