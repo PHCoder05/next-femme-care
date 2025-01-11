@@ -85,29 +85,29 @@ export default function Footer() {
       {/* Social Media Section */}
       <div className="mt-10 flex justify-center space-x-4">
         <a
-          href="#"
+          href="https://www.facebook.com/hemkanti.clinics"
           className="w-10 h-10 flex justify-center items-center bg-gray-700 rounded-full hover:bg-blue-500 transition"
         >
           <i className="fab fa-facebook-f text-white"></i>
         </a>
         <a
-          href="#"
+          href="https://x.com/hemkanticlinics"
           className="w-10 h-10 flex justify-center items-center bg-gray-700 rounded-full hover:bg-blue-400 transition"
         >
           <i className="fab fa-twitter text-white"></i>
         </a>
         <a
-          href="http://www.instagram.com/hemkanti.online"
+          href="https://www.instagram.com/hemkanti.clinics"
           className="w-10 h-10 flex justify-center items-center bg-gray-700 rounded-full hover:bg-red-500 transition"
         >
           <i className="fab fa-instagram text-white"></i>
         </a>
-        {/* <a
-          href="#"
+        <a
+          href="https://www.youtube.com/@hemkanti.clinics"
           className="w-10 h-10 flex justify-center items-center bg-gray-700 rounded-full hover:bg-gray-300 transition"
         >
-          <i className="fab fa-linkedin-in text-white"></i>
-        </a> */}
+<i className="fab fa-youtube text-white"></i>
+        </a>
       </div>
 
       {/* Bottom Section */}
