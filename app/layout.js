@@ -1,4 +1,5 @@
 // app/layout.js (RootLayout Component)
+import { Analytics } from "@vercel/analytics/react";
 
 import "../styles/globals.css";
 import Navbar from "../components/Navbar";
@@ -77,6 +78,7 @@ export default function RootLayout({ children }) {
         {children}
         <FloatingButton />
         <Footer />
+                  <Analytics />
       </body>
     </html>
   );
