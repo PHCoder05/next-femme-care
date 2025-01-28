@@ -66,10 +66,23 @@ export default function RootLayout({ children }) {
         <meta name="twitter:image" content={metadata.twitter.image} />
 
         {/* Favicon Links */}
-        <link rel="icon" href="public\favicon.ico" />
+        <link rel="icon" href="/favicon.ico" />
         <link rel="icon" href="/favicon-32x32.png" sizes="32x32" />
         <link rel="icon" href="/favicon-16x16.png" sizes="16x16" />
         <link rel="apple-touch-icon" href="/favicon-180x180.png" />
+
+        {/* Google Analytics */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LF4PVQN5MR"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-LF4PVQN5MR');
+            `,
+          }}
+        />
 
         <title>{metadata.title}</title>
       </head>
@@ -78,7 +91,7 @@ export default function RootLayout({ children }) {
         {children}
         <FloatingButton />
         <Footer />
-                  <Analytics />
+        <Analytics />
       </body>
     </html>
   );
