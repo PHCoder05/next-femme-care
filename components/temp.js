@@ -1,115 +1,114 @@
-import React, { useState, useEffect } from 'react';
-import servicesData from '../app/services/services-data.json';
-import { useRouter } from 'next/navigation';
+"use client";
+import React, { useState, useEffect } from "react";
+import servicesData from "../app/services/services-data.json";
+import { useRouter } from "next/navigation";
+import { useBooking } from "../app/context/page";
+import { LoadingSpinner } from "./LoadingSpinner";
 
-export default function BookAppointment({ formData, handleInputChange, closeModal }) {
-  const router = useRouter(); // Add this line
+const validatePhone = (phone) => /^[0-9]{10}$/.test(phone);
+
+const validateEmail = (email) => {
+  const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+  return emailRegex.test(email);
+};
+
+const REQUIRED_FIELDS = ["name", "email", "phone", "date", "time", "category"];
+
+export default function BookAppointment({ formData, closeModal }) {
+  const router = useRouter();
+  const { setBookingData } = useBooking();
+
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
   const [localFormData, setLocalFormData] = useState(formData);
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    // Retrieve saved form data from localStorage
-    const savedFormData = localStorage.getItem("appointmentFormData");
-    if (savedFormData) {
-      try {
-        const parsedData = JSON.parse(savedFormData);
-        setLocalFormData(parsedData);
-      } catch (error) {
-        console.error("Error parsing saved form data:", error);
-        setLocalFormData(formData); // Fallback
+    try {
+      const savedFormData = localStorage.getItem("appointmentFormData");
+      if (savedFormData) {
+        setLocalFormData(JSON.parse(savedFormData));
       }
+    } catch (error) {
+      console.error("Error loading saved form data:", error);
+      setLocalFormData(formData);
     }
 
-    // Set categories from services data
     setCategories(Object.entries(servicesData.categories || {}));
   }, [formData]);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    // Reset message before validation
-    setMessage("");
-
-    // Find the name of the category or service based on the selected ID
-    const categoryName = categories.find(
-      ([name, _]) => name === localFormData.category
-    )?.[0];
-    const serviceName = localFormData.service
-      ? servicesData.categories[categoryName]?.services.find(
-          (service) => service.id === localFormData.service
-        )?.name
-      : null;
-
-    // Validate form inputs
+  const validateForm = () => {
     if (!validatePhone(localFormData.phone)) {
-      setMessage({ text: "Please enter a valid phone number.", type: "error" });
-      return;
+      return "Please enter a valid phone number.";
     }
 
     if (!validateEmail(localFormData.email)) {
-      setMessage({
-        text: "Please enter a valid email address.",
-        type: "error",
-      });
-      return;
+      return "Please enter a valid email address.";
     }
 
     if (new Date(localFormData.date) < new Date()) {
-      setMessage({ text: "Please select a future date.", type: "error" });
-      return;
+      return "Please select a future date.";
     }
 
     if (!localFormData.time) {
-      setMessage({ text: "Please select a time.", type: "error" });
-      return;
+      return "Please select a time.";
     }
 
     if (!localFormData.category) {
-      setMessage({ text: "Please select a category.", type: "error" });
-      return;
+      return "Please select a category.";
     }
 
     const selectedCategory = categories.find(
       ([name]) => name === localFormData.category
     );
-    if (
-      selectedCategory &&
-      selectedCategory[1]?.services?.length > 0 &&
-      !localFormData.service
-    ) {
-      setMessage({
-        text: "Please select a service listed below for the chosen category.",
-        type: "error",
-      });
-      return;
+    if (selectedCategory?.[1]?.services?.length > 0 && !localFormData.service) {
+      return "Please select a service listed below for the chosen category.";
     }
 
-    // Ensure all required fields are filled out
-    const requiredFields = [
-      "name",
-      "email",
-      "phone",
-      "date",
-      "time",
-      "category",
-    ];
-    for (const field of requiredFields) {
+    for (const field of REQUIRED_FIELDS) {
       if (!localFormData[field]) {
-        setMessage({ text: `Please fill out the ${field}.`, type: "error" });
-        return;
+        return `Please fill out the ${field}.`;
       }
     }
 
+    return null;
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // Start loading
     setLoading(true);
+    setMessage("");
 
     try {
-      // Replace category ID with category name and service ID with service name
+      const validationError = validateForm();
+      if (validationError) {
+        setMessage({ text: validationError, type: "error" });
+        setLoading(false);
+        return;
+      }
+
+      const categoryName = categories.find(
+        ([name]) => name === localFormData.category
+      )?.[0];
+
+      const selectedCategory = servicesData.categories[categoryName];
+      const serviceName =
+        localFormData.service && selectedCategory
+          ? selectedCategory.services.find(
+              (service) => service.id === localFormData.service
+            )?.name
+          : null;
+
       const appointmentData = {
-        ...localFormData,
-        category: categoryName, // Use the category name
-        service: serviceName, // Use the service name if available
+        name: localFormData.name,
+        email: localFormData.email,
+        phone: localFormData.phone,
+        date: localFormData.date,
+        time: localFormData.time,
+        category: categoryName,
+        service: serviceName || categoryName,
       };
 
       const response = await fetch("/api/book_appointment", {
@@ -118,52 +117,36 @@ export default function BookAppointment({ formData, handleInputChange, closeModa
         body: JSON.stringify(appointmentData),
       });
 
-      if (!response.ok) {
-        const errorResponse = await response.json();
-        console.error("Error Response:", errorResponse);
-        throw new Error(
-          `Server error: ${response.status} ${response.statusText}`
-        );
-      }
-
       const result = await response.json();
 
-      // if (result.success) {
-      //   setMessage({
-      //     text: "Your appointment has been booked successfully!",
-      //     type: "success",
-      //   });
-      //   setTimeout(() => {
-      //     closeModal();
-      //     localStorage.removeItem("appointmentFormData");
-      //     router.push("/thank-you");
-      //   }, 5000);
-      // } else {
-      //   setMessage({
-      //     text: result.message || "There was an error. Please try again.",
-      //     type: "error",
-      //   });
-      // }
-       if (result.success) {
-         setMessage({
-           text: "Your appointment has been booked successfully!",
-           type: "success",
-         });
-         localStorage.removeItem("appointmentFormData");
-         if (closeModal) {
-           closeModal();
-         }
-         router.push("./thank-you"); // Update the path to match your file structure
-       } else {
-         setMessage({
-           text: result.message || "There was an error. Please try again.",
-           type: "error",
-         });
-       }
+      if (result.success) {
+        // Set booking data with required fields for thank you page
+        setBookingData({
+          isComplete: true,
+          timestamp: Date.now(),
+          appointmentDetails: {
+            ...appointmentData,
+            date: localFormData.date,
+            time: localFormData.time,
+            service: serviceName || categoryName,
+          },
+        });
+
+        localStorage.removeItem("appointmentFormData");
+        if (closeModal) {
+          closeModal();
+        }
+        router.push("/thank-you");
+      } else {
+        setMessage({
+          text: result.message || "Booking failed. Please try again.",
+          type: "error",
+        });
+      }
     } catch (error) {
       console.error("Error:", error);
       setMessage({
-        text: `Something went wrong: ${error.message || "Please try again."}`,
+        text: `Something went wrong: ${error.message}`,
         type: "error",
       });
     } finally {
@@ -171,23 +154,18 @@ export default function BookAppointment({ formData, handleInputChange, closeModa
     }
   };
 
-  const validatePhone = (phone) => /^[0-9]{10}$/.test(phone);
-
-  const validateEmail = (email) => {
-    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-    return emailRegex.test(email);
-  };
-
-  const handleInputChangeLocal = (e) => {
+  const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setLocalFormData((prevState) => ({
-      ...prevState,
+    setLocalFormData((prev) => ({
+      ...prev,
       [name]: value,
     }));
   };
 
   return (
     <section className="bg-gradient-to-br from-[#FFF8F1] to-[#FDEFE3] py-20 px-6 sm:px-8 lg:px-10 text-gray-700 relative">
+      {bookingData.loading && <LoadingSpinner />}
+
       <div className="absolute top-0 left-0 w-28 h-28 bg-[#FFCCBC] rounded-full opacity-20 blur-3xl"></div>
       <div className="absolute bottom-0 right-0 w-28 h-28 bg-[#BCAAA4] rounded-full opacity-20 blur-3xl"></div>
 
@@ -249,7 +227,7 @@ export default function BookAppointment({ formData, handleInputChange, closeModa
                   name={id}
                   value={localFormData[id] || ""}
                   placeholder={placeholder}
-                  onChange={handleInputChangeLocal}
+                  onChange={handleInputChange}
                   className="mt-2 block w-full rounded-md border border-gray-300 bg-[#FFF7F3] p-3 text-gray-800 placeholder-gray-500 shadow-sm focus:ring-2 focus:ring-[#754737] focus:outline-none transition-all duration-300 hover:shadow-md"
                   required
                 />
@@ -266,7 +244,7 @@ export default function BookAppointment({ formData, handleInputChange, closeModa
                 id="category"
                 name="category"
                 value={localFormData.category || ""}
-                onChange={handleInputChangeLocal}
+                onChange={handleInputChange}
                 className="mt-2 block w-full rounded-md border border-gray-300 bg-[#FFF7F3] p-3 text-gray-800 shadow-sm focus:ring-2 focus:ring-[#754737] focus:outline-none hover:shadow-md transition-all duration-300"
                 required>
                 <option value="" disabled>
@@ -286,29 +264,21 @@ export default function BookAppointment({ formData, handleInputChange, closeModa
                   Services in {localFormData.category}
                 </h3>
                 {categories
-                  .filter(
+                  .find(
                     ([categoryName]) => categoryName === localFormData.category
-                  )
-                  .map(([categoryName, categoryData]) => (
-                    <div key={categoryName}>
-                      {categoryData.services.length === 0 ? (
-                        <p>No services available in this category.</p>
-                      ) : (
-                        categoryData.services.map((service) => (
-                          <div key={service.id} className="space-x-2">
-                            <input
-                              type="radio"
-                              id={service.id}
-                              name="service"
-                              value={service.id}
-                              checked={localFormData.service === service.id}
-                              onChange={handleInputChangeLocal}
-                              className="mr-2"
-                            />
-                            <label htmlFor={service.id}>{service.name}</label>
-                          </div>
-                        ))
-                      )}
+                  )?.[1]
+                  .services.map((service) => (
+                    <div key={service.id} className="space-x-2">
+                      <input
+                        type="radio"
+                        id={service.id}
+                        name="service"
+                        value={service.id}
+                        checked={localFormData.service === service.id}
+                        onChange={handleInputChange}
+                        className="mr-2"
+                      />
+                      <label htmlFor={service.id}>{service.name}</label>
                     </div>
                   ))}
               </div>
@@ -318,7 +288,7 @@ export default function BookAppointment({ formData, handleInputChange, closeModa
               <button
                 type="submit"
                 disabled={loading}
-                className="bg-[#754737] text-white px-6 py-3 rounded-md font-semibold shadow-lg hover:bg-[#FF5722] focus:outline-none">
+                className="bg-[#754737] text-white px-6 py-3 rounded-md font-semibold shadow-lg hover:bg-[#FF5722] focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed">
                 {loading ? "Booking..." : "Book Now"}
               </button>
             </div>

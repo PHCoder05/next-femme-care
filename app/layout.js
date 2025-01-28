@@ -1,7 +1,8 @@
-// app/layout.js (RootLayout Component)
+// app/layout.js
 import { Analytics } from "@vercel/analytics/react";
-
+import { BookingProvider } from "./context/page";
 import "../styles/globals.css";
+import { ErrorBoundary } from "../components/ErrorBoundary.jsx";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import FloatingButton from "../components/FloatingButton";
@@ -26,7 +27,7 @@ export const metadata = {
     siteName: "Hemkanti Skincare Clinics",
     type: "website",
   },
-  
+
   // Twitter Card (For sharing on Twitter)
   twitter: {
     card: "summary_large_image",
@@ -44,7 +45,7 @@ export default function RootLayout({ children }) {
         {/* SEO and Favicon Links */}
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        
+
         {/* Meta Tags for SEO */}
         <meta name="description" content={metadata.description} />
         <meta name="keywords" content={metadata.keywords} />
@@ -53,7 +54,10 @@ export default function RootLayout({ children }) {
 
         {/* Open Graph Meta Tags */}
         <meta property="og:title" content={metadata.openGraph.title} />
-        <meta property="og:description" content={metadata.openGraph.description} />
+        <meta
+          property="og:description"
+          content={metadata.openGraph.description}
+        />
         <meta property="og:image" content={metadata.openGraph.image} />
         <meta property="og:url" content={metadata.openGraph.url} />
         <meta property="og:site_name" content={metadata.openGraph.siteName} />
@@ -62,7 +66,10 @@ export default function RootLayout({ children }) {
         {/* Twitter Meta Tags */}
         <meta name="twitter:card" content={metadata.twitter.card} />
         <meta name="twitter:title" content={metadata.twitter.title} />
-        <meta name="twitter:description" content={metadata.twitter.description} />
+        <meta
+          name="twitter:description"
+          content={metadata.twitter.description}
+        />
         <meta name="twitter:image" content={metadata.twitter.image} />
 
         {/* Favicon Links */}
@@ -72,7 +79,9 @@ export default function RootLayout({ children }) {
         <link rel="apple-touch-icon" href="/favicon-180x180.png" />
 
         {/* Google Analytics */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LF4PVQN5MR"></script>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-LF4PVQN5MR"></script>
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -87,11 +96,15 @@ export default function RootLayout({ children }) {
         <title>{metadata.title}</title>
       </head>
       <body className="bg-slate-100">
-        <Navbar />
-        {children}
-        <FloatingButton />
-        <Footer />
-        <Analytics />
+        <ErrorBoundary>
+          <BookingProvider>
+            <Navbar />
+            {children}
+            <FloatingButton />
+            <Footer />
+            <Analytics />
+          </BookingProvider>
+        </ErrorBoundary>
       </body>
     </html>
   );

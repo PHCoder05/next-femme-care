@@ -12,6 +12,7 @@
     "@fortawesome/fontawesome-free": "^6.7.2",
     "@vercel/analytics": "^1.4.1",
     "cors": "^2.8.5",
+    "framer-motion": "^12.0.6",
     "lucide-react": "^0.468.0",
     "next": "15.0.3",
     "nodemailer": "^6.9.16",
