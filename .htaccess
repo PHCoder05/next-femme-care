@@ -1,0 +1,7 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Allow access only if the referer is your application (replace with your app's URL)
+  RewriteCond %{HTTP_REFERER} !^https://hemkanti.com [NC]
+  RewriteRule ^thank-you$ - [F,L]
+</IfModule>
