@@ -111,7 +111,55 @@
           "duration": "90 min",
           "benefits": ["Skin glow", "Relaxation", "Grooming"],
           "availableSlots": ["Morning", "Afternoon", "Evening"]
-        }
+        },
+          {
+    "id": "cos-10",
+    "name": "Botox",
+    "icon": "💉",
+    "description": "Smooth out wrinkles and fine lines with our Botox treatments.",
+    "longDescription": "Our Botox treatments help reduce wrinkles and fine lines, providing a youthful and refreshed appearance. Performed by experienced professionals for natural-looking results.",
+    "rating": 4.8,
+    "price": 250,
+    "duration": "45 min",
+    "benefits": ["Wrinkle reduction", "Youthful appearance", "Non-surgical"],
+    "availableSlots": ["Morning", "Afternoon", "Evening"]
+  },
+  {
+    "id": "cos-11",
+    "name": "Fillers",
+    "icon": "💉",
+    "description": "Restore volume and enhance facial contours with Fillers.",
+    "longDescription": "Our Fillers add volume, enhance facial features, and smooth out lines for a more youthful and rejuvenated look. Customized to your unique facial structure.",
+    "rating": 4.9,
+    "price": 350,
+    "duration": "60 min",
+    "benefits": ["Volume enhancement", "Facial contouring", "Instant results"],
+    "availableSlots": ["Morning", "Afternoon", "Evening"]
+  },
+  {
+    "id": "cos-12",
+    "name": "Threads",
+    "icon": "🧵",
+    "description": "A non-surgical facelift using dissolvable threads for a lifted look.",
+    "longDescription": "Our Threads procedure tightens and lifts sagging skin without surgery. It stimulates collagen production for long-term skin rejuvenation and firmness.",
+    "rating": 4.7,
+    "price": 600,
+    "duration": "90 min",
+    "benefits": ["Skin lifting", "Collagen stimulation", "Minimal downtime"],
+    "availableSlots": ["Morning", "Afternoon", "Evening"]
+  },
+  {
+    "id": "cos-13",
+    "name": "Hair Transplant",
+    "icon": "🦰",
+    "description": "Regain a fuller head of hair with advanced Hair Transplant techniques.",
+    "longDescription": "Our Hair Transplant procedures use state-of-the-art techniques like FUE and FUT to restore natural hair growth, ensuring long-lasting and natural-looking results.",
+    "rating": 4.9,
+    "price": 2000,
+    "duration": "4-8 hours",
+    "benefits": ["Permanent hair restoration", "Natural look", "Boost confidence"],
+    "availableSlots": ["Morning", "Afternoon"]
+  }
       ]
     }
 ,
