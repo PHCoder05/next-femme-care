@@ -53,7 +53,7 @@ const ScreenCarePopup = () => {
         {/* Hero Image */}
         <div className="z-10000000 relative h-full w-full bg-gradient-to-r from-blue-100 to-purple-000">
           <img
-            src="/images/popup.jpg"
+            src="/images/popup2.jpg"
             alt="Screen Protection"
             className="h-full w-full object-cover "
           />
