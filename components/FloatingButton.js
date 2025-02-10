@@ -88,7 +88,7 @@ const FloatingButtonWithModal = () => {
           "ctaText": "Chat with us",
           "borderRadius": "25",
           "autoShow": false,
-          "phoneNumber": "+919511604677"
+          "phoneNumber": "+919405631363"
         }
       };
       // Initialize the widget after the script is loaded
